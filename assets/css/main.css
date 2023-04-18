@@ -140,4 +140,54 @@ ul.social-icons a:hover {
     border: 1px solid var(--contrast-color);
 }
 
+.header-bottom {
+    border-top: 3px solid var(--accent-color);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .3);
+}
+
+.header-bottom .navbar,
+.header-bottom .navbar .dropdown-menu {
+    background-color: var(--contrast-color) !important;
+}
+
+.header-bottom .nav-item:first-child .nav-link {
+    padding-left: 0;
+}
+
+.header-bottom .navbar .nav-link {
+    color: #fff;
+    transition: .3s all;
+    letter-spacing: .1rem;
+}
+
+.header-bottom .navbar .nav-link:hover {
+    color: var(--accent-color);
+}
+
+.header-bottom .navbar .nav-link.active {
+    color: var(--accent-color);
+}
+
+.header-bottom .navbar .dropdown-menu {
+    margin-top: 7px;
+}
+
 /* ============================= Header rules ============================ */
+
+
+@media only screen and (min-width : 992px) {
+    .header-bottom .navbar .dropdown-menu-end {
+        margin-left: 0;
+        border: 0;
+    }
+
+    .header-bottom .navbar .nav-link {
+        padding: 1rem;
+    }
+}
+
+@media only screen and (max-width : 992px) {
+    .header-bottom .navbar .dropdown-menu {
+        padding-left: 1rem;
+    }
+}
