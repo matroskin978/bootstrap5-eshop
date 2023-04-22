@@ -77,9 +77,35 @@ main.main {
     flex: 1 1 auto;
 }
 
+section {
+    padding: 50px 0;
+}
+
+.section-title {
+    position: relative;
+    text-transform: uppercase;
+    color: var(--contrast-color);
+    font-weight: 700;
+}
+
+.section-title span {
+    background-color: var(--bg-color);
+    padding-right: 1rem;
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    top: 50%;
+    left: 0;
+    border-top: 1px dashed var(--text-color);
+    z-index: -1;
+}
+
 /* ============================= General rules ============================ */
 
-/* ============================= Header rules ============================ */
+/* ============================= Header ============================ */
 
 .header-top-phone a {
     text-decoration: none;
@@ -172,7 +198,54 @@ ul.social-icons a:hover {
     margin-top: 7px;
 }
 
-/* ============================= Header rules ============================ */
+/* ============================= Header ============================ */
+
+
+/* ============================= Main ============================ */
+
+
+/* ============================= Carousel ============================ */
+.carousel-caption {
+    text-shadow: 0 0 2px rgba(0, 0, 0, 1);
+}
+
+.carousel-caption p {
+    font-size: 1.5rem;
+}
+
+/* ============================= Carousel ============================ */
+
+
+/* ============================= Advantages ============================ */
+
+.advantages .items {
+    margin-top: 50px;
+}
+
+.advantages .items .item {
+    background-color: #fff;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all .3s;
+}
+
+.advantages .items .item:hover {
+    box-shadow: 0 15px 30px -20px rgba(0, 0, 0, .5);
+}
+
+.advantages i {
+    font-size: 70px;
+    color: var(--accent-color);
+}
+
+/* ============================= Advantages ============================ */
+
+
+
+/* ============================= Main ============================ */
 
 
 @media only screen and (min-width : 992px) {
