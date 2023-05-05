@@ -343,6 +343,11 @@ ul.social-icons a:hover {
     font-size: 0.8rem;
 }
 
+.owl-carousel-full .owl-item img {
+    display: inline-block;
+    width: auto;
+}
+
 /* ============================= Product card ============================ */
 
 /* ============================= Featured products ============================ */
