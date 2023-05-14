@@ -170,6 +170,24 @@ ul.social-icons a:hover {
     border: 1px solid var(--contrast-color);
 }
 
+.offcanvasCart-table .product-img-td {
+    width: 70px;
+    text-align: center;
+}
+
+.offcanvasCart-table img {
+    max-width: 50px;
+}
+
+.offcanvasCart-table a {
+    text-decoration: none;
+    display: block;
+}
+
+.offcanvasCart-table a:hover {
+    text-decoration: underline;
+}
+
 .header-bottom {
     border-top: 3px solid var(--accent-color);
     box-shadow: 0 10px 10px rgba(0, 0, 0, .3);
