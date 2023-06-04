@@ -378,7 +378,8 @@ ul.social-icons a:hover {
 }
 
 .about-us .section-title span,
-.sidebar .section-title span {
+.sidebar .section-title span,
+.product-content .section-title span {
     background-color: #fff;
 }
 
@@ -523,6 +524,35 @@ footer a:hover {
 }
 
 /* ============================= Category Page ============================ */
+
+
+/* ============================= Product Page ============================ */
+
+.product-content .product-price {
+    font-size: 25px;
+}
+
+.product-content .input-group {
+    width: 250px;
+}
+
+.product-content .card i {
+    color: var(--accent-color);
+}
+
+.product-content .card {
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+.product-content .card ul li::before {
+    content: "\f105";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+/* ============================= Product Page ============================ */
 
 @media only screen and (min-width : 992px) {
     .header-bottom .navbar .dropdown-menu-end {
