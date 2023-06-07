@@ -552,6 +552,15 @@ footer a:hover {
     margin-right: 10px;
 }
 
+.nav-tabs .nav-link {
+    border-radius: 0;
+    color: var(--contrast-color);
+}
+
+.tab-content {
+    padding-top: 20px;
+}
+
 /* ============================= Product Page ============================ */
 
 @media only screen and (min-width : 992px) {
@@ -578,5 +587,12 @@ footer a:hover {
 
     .sidebar .collapse-filters-btn {
         display: none;
+    }
+}
+
+@media only screen and (max-width : 500px) {
+    .product-content-details .nav-tabs .nav-link {
+        padding-left: 8px;
+        padding-right: 8px;
     }
 }
