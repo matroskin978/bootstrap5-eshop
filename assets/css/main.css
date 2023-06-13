@@ -104,7 +104,12 @@ section {
     top: 50%;
     left: 0;
     border-top: 1px dashed var(--text-color);
-    /* z-index: -1; */
+}
+
+label.required::before {
+    content: '* ';
+    color: #dc3545;
+    font-weight: bold;
 }
 
 /* ============================= General rules ============================ */
@@ -379,7 +384,7 @@ ul.social-icons a:hover {
 
 .about-us .section-title span,
 .sidebar .section-title span,
-.product-content .section-title span {
+.bg-white .section-title span {
     background-color: #fff;
 }
 
