@@ -25,6 +25,10 @@ a {
     text-decoration: underline;
 }
 
+textarea {
+    resize: none;
+}
+
 a:hover {
     text-decoration: none;
 }
@@ -36,11 +40,13 @@ img {
 
 .btn,
 .dropdown-menu,
-.form-control {
+.form-control,
+.form-select {
     border-radius: 0;
 }
 
-.form-control:focus {
+.form-control:focus,
+.form-select:focus {
     color: var(--text-color);
     border-color: var(--accent-color);
     box-shadow: none;
