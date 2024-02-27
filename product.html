@@ -286,7 +286,7 @@
 
         <main class="main">
 
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <nav class="breadcrumbs">
@@ -300,7 +300,7 @@
                 </div>
             </div>
 
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-md-5 col-lg-4 mb-3">
                         <div class="bg-white h-100">
@@ -339,6 +339,15 @@
                     <div class="col-md-7 col-lg-8 mb-3">
                         <div class="bg-white product-content p-3 h-100">
                             <h1 class="section-title h3"><span>Product Name</span></h1>
+
+                            <div class="product-rating">
+                                <i class="fa-solid fa-star active"></i>
+                                <i class="fa-solid fa-star active"></i>
+                                <i class="fa-solid fa-star active"></i>
+                                <i class="fa-solid fa-star active"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span class="count-reviews">10 reviews</span>
+                            </div>
 
                             <div class="product-price">
                                 <small>$70</small>
@@ -418,6 +427,11 @@
                                         aria-controls="features-tab-pane" aria-selected="false">Features</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="reviews-tab" data-bs-toggle="tab"
+                                        data-bs-target="#reviews-tab-pane" type="button" role="tab"
+                                        aria-controls="reviews-tab-pane" aria-selected="false">Reviews (10)</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="video-tab" data-bs-toggle="tab"
                                         data-bs-target="#video-tab-pane" type="button" role="tab"
                                         aria-controls="video-tab-pane" aria-selected="false">Video</button>
@@ -452,6 +466,161 @@
                                         </tbody>
                                     </table>
                                 </div>
+
+                                <div class="tab-pane fade" id="reviews-tab-pane" role="tabpanel"
+                                    aria-labelledby="reviews-tab" tabindex="0">
+
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-warning mb-3" data-bs-toggle="modal"
+                                        data-bs-target="#reviewModal">
+                                        Write review
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="reviewModal" tabindex="-1"
+                                        aria-labelledby="reviewModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="reviewModalLabel">Write review</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+
+                                                <form action="">
+                                                    <div class="modal-body">
+                                                        <div class="mb-3">
+                                                            <label for="exampleFormControlInput1"
+                                                                class="form-label">Email address</label>
+                                                            <input type="email" class="form-control"
+                                                                id="exampleFormControlInput1"
+                                                                placeholder="name@example.com">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="exampleFormControlTextarea1"
+                                                                class="form-label">Example textarea</label>
+                                                            <textarea class="form-control"
+                                                                id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <p>Rate the product:</p>
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio" name="rate"
+                                                                    id="rate1" value="1" required>
+                                                                <label class="form-check-label" for="rate1">1</label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio" name="rate"
+                                                                    id="rate2" value="2" required>
+                                                                <label class="form-check-label" for="rate2">2</label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio" name="rate"
+                                                                    id="rate3" value="3" required>
+                                                                <label class="form-check-label" for="rate3">3</label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio" name="rate"
+                                                                    id="rate4" value="4" required>
+                                                                <label class="form-check-label" for="rate4">4</label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio" name="rate"
+                                                                    id="rate5" value="5" required>
+                                                                <label class="form-check-label" for="rate5">5</label>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn btn-warning">Send
+                                                            review</button>
+                                                    </div>
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card product-review mb-3">
+                                        <div class="card-body">
+                                            <div class="product-review-header">
+                                                <h5 class="card-title">John Doe</h5>
+                                                <span class="review-date">27.02.2024</span>
+                                            </div>
+
+                                            <div class="product-rating mb-3">
+                                                <i class="fa-solid fa-star active"></i>
+                                                <i class="fa-solid fa-star active"></i>
+                                                <i class="fa-solid fa-star active"></i>
+                                                <i class="fa-solid fa-star active"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+
+                                            <div class="card-text">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                                                    obcaecati laborum deleniti id consequatur possimus repellendus eius
+                                                    tempora corrupti. Doloribus in nisi consequatur ipsam repudiandae
+                                                    eaque perspiciatis quas minima provident!</p>
+                                                <p>Est amet libero voluptates aspernatur quam nisi velit quaerat natus
+                                                    et? Vero quasi veritatis necessitatibus, nesciunt neque iste quos ut
+                                                    ullam laboriosam? Enim temporibus labore sequi esse non harum nam.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card product-review mb-3">
+                                        <div class="card-body">
+                                            <div class="product-review-header">
+                                                <h5 class="card-title">John Doe</h5>
+                                                <span class="review-date">27.02.2024</span>
+                                            </div>
+
+                                            <div class="product-rating mb-3">
+                                                <i class="fa-solid fa-star active"></i>
+                                                <i class="fa-solid fa-star active"></i>
+                                                <i class="fa-solid fa-star active"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+
+                                            <div class="card-text">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                                                    obcaecati laborum deleniti id consequatur possimus repellendus eius
+                                                    tempora corrupti. Doloribus in nisi consequatur ipsam repudiandae
+                                                    eaque perspiciatis quas minima provident!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card product-review mb-3">
+                                        <div class="card-body">
+                                            <div class="product-review-header">
+                                                <h5 class="card-title">John Doe</h5>
+                                                <span class="review-date">27.02.2024</span>
+                                            </div>
+
+                                            <div class="product-rating mb-3">
+                                                <i class="fa-solid fa-star active"></i>
+                                                <i class="fa-solid fa-star active"></i>
+                                                <i class="fa-solid fa-star active"></i>
+                                                <i class="fa-solid fa-star active"></i>
+                                                <i class="fa-solid fa-star active"></i>
+                                            </div>
+
+                                            <div class="card-text">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                                                    obcaecati laborum deleniti id consequatur possimus repellendus eius
+                                                    tempora corrupti. Doloribus in nisi consequatur ipsam repudiandae
+                                                    eaque perspiciatis quas minima provident!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
                                 <div class="tab-pane fade" id="video-tab-pane" role="tabpanel"
                                     aria-labelledby="video-tab" tabindex="0">
                                     <div class="ratio ratio-16x9">
@@ -469,7 +638,7 @@
             </div>
 
             <section class="new-products">
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row mb-5">
                         <div class="col-12">
                             <h2 class="section-title">

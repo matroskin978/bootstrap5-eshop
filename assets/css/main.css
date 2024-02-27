@@ -379,6 +379,27 @@ ul.social-icons a:hover {
     width: auto;
 }
 
+.product-rating i {
+    color: #ccc;
+}
+
+.product-rating .active {
+    color: var(--accent-color);
+}
+
+.product-rating .count-reviews {
+    margin-left: 10px;
+}
+
+.product-review-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-review-header .review-date {
+    color: var(--gray-color);
+}
+
 /* ============================= Product card ============================ */
 
 /* ============================= Featured products ============================ */
