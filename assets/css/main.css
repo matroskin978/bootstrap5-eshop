@@ -635,6 +635,35 @@ footer a:hover {
     padding: 1rem;
 }
 
+#checkoutForm {
+    position: relative;
+}
+
+.ajax-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, .5);
+    z-index: 2;
+    display: none;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.ajax-loader.fade {
+    display: block;
+    opacity: 1;
+}
+
+.ajax-loader img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 /* ============================= Cart Page ============================ */
 
 @media only screen and (min-width : 992px) {

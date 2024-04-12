@@ -284,7 +284,11 @@
 
             <div class="container-fluid">
 
-                <form action="" class="needs-validation" novalidate>
+                <form action="" class="needs-validation" id="checkoutForm" novalidate>
+
+                    <div class="ajax-loader" id="ajaxLoader">
+                        <img src="assets/img/ripple.svg" alt="">
+                    </div>
 
                     <div class="row">
 
@@ -321,8 +325,8 @@
 
                                     <div class="col-md-6">
                                         <label for="city" class="form-label">City</label>
-                                        <input type="text" name="city" id="city" class="form-control"
-                                            placeholder="City name" aria-label="City" required>
+                                        <select id="city" name="city" class="form-select" aria-label="City"
+                                            required></select>
                                     </div>
 
                                     <div class="col-md-6">
@@ -466,8 +470,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/owlcarousel/owl.carousel.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-        fetch('/assets/js/countries.json')
+    <script type="module">
+        // https://github.com/russ666/all-countries-and-cities-json?tab=readme-ov-file
+        /* fetch('/assets/js/countries.json')
             .then((res) => res.json())
             .then((json) => {
                 let html = '';
@@ -475,7 +480,47 @@
                     html += `<option value="${el.code}">${el.name}</option>`;
                 });
                 document.getElementById('country').innerHTML = html;
-            });
+            }); */
+
+        const countryField = document.getElementById('country');
+        const cityField = document.getElementById('city');
+        let res = await fetch('assets/countries.json');
+        const data = await res.json();
+
+        function getCountries() {
+            let html = '';
+            for (country in data) {
+                html += `<option value="${country}">${country}</option>`;
+            }
+            countryField.innerHTML = html;
+        }
+
+        function getCities(country = '') {
+            let html = '';
+            if (!country) {
+                country = Object.keys(data)[0];
+            }
+            for (city of data[country]) {
+                html += `<option value="${city}">${city}</option>`;
+            }
+            cityField.innerHTML = html;
+        }
+
+        function getLoader() {
+            document.getElementById('ajaxLoader').classList.toggle('fade');
+        }
+
+        getCountries();
+        getCities();
+
+        countryField.addEventListener('change', function () {
+            getLoader();
+            setTimeout(() => {
+                getCities(this.value);
+                getLoader();
+            }, 1000);
+        });
+
     </script>
 </body>
 
